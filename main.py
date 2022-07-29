@@ -1,7 +1,7 @@
 import asyncio
 from db.db import DB
-from bot import Bot
-from db.storage import UserStorage, ChannelStorage 
+from bot import TG_Bot
+from db.storage import UserStorage 
 from config import Config
 
 async def init_db():
@@ -13,7 +13,7 @@ async def init_db():
 
 async def main():
     user_storage = await init_db()
-    neo_admin = Bot(Config.TGBOT_API_KEY, user_storage)
+    neo_admin = TG_Bot(Config.TGBOT_API_KEY, user_storage)
     await neo_admin.init()
     await asyncio.gather(neo_admin.start())
 

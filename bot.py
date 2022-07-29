@@ -4,7 +4,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from db.storage import UserStorage, User
 
-class NeoAdmin():
+class TG_Bot():
     def __init__(self, tg_api_key: str, user_storage: UserStorage):
         self._user_storage:UserStorage = user_storage
         self._bot:aiogram.Bot = aiogram.Bot(token=tg_api_key)
